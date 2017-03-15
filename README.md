@@ -2,9 +2,5 @@
 <h2> To-Do List </h2>
 
 <ul>
-<li>Phaser?</li>
-<br><li>hello world</li>
-<li> hey dont edit this! </li>
+<li></li>
 </ul>
-no i wont 
-<br>really!
