@@ -16,6 +16,37 @@ var game = {
     }
 }; // End Game object
 
+// Keyboard handler
+var kbd = function () {
+    this.up = false;
+    this.down = false;
+    this.left = false;
+    this.right = false;
+    this.p = true;
+};
+
+// add keyevent listener to track arrow key actions
+document.addEventListener("keydown", function (e) {
+  if (e.keyCode === 39 || e.keyCode === 68) {
+    kbd.right = true;
+  }
+  else if (e.keyCode === 38 || e.keyCode === 87 || e.keyCode === 32) {
+    kbd.up = true;
+  }
+  else if (e.keyCode === 37 || e.keyCode === 65) {
+    kbd.left = true;
+  }
+  else if (e.keyCode === 80) {
+    kbd.p = true;
+  }
+}, false);
+
+document.addEventListener("keyup", function (e) {
+  if (e) {
+    kbd.up = kbd.left = kbd.right = kbd.p = false;
+  }
+}, false);
+
 game.start(); // canvas not created until this function is called
 
 // Global variables
