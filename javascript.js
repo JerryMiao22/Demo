@@ -44,4 +44,3 @@ function update() {
     // draw images
     player.update();
 }
-no fuck that
