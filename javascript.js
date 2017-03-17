@@ -12,7 +12,7 @@ var game = {
     clear : function () {
 		this.context.globalAlpha = 1;
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-		this.context.drawImage(bgImage, 0, 0, this.canvas.width, this.canvas.height);
+		//this.context.drawImage(bgImage, 0, 0, this.canvas.width, this.canvas.height);
     }
 }; // End Game object
 
@@ -43,7 +43,7 @@ document.addEventListener("keydown", function (e) {
 
 document.addEventListener("keyup", function (e) {
   if (e) {
-    kbd.up = kbd.left = kbd.right = kbd.p = false;
+    kbd.up = kbd.left = kbd.right = kbd.down = kbd.p = false;
   }
 }, false);
 
@@ -62,16 +62,48 @@ function Player(width, height, color, x, y) {
     this.color = color;
     this.x = x;
     this.y = y;
+    this.speedX = 0;
+    this.speedY = 0;
+    
+    this.move = function() {
+        // Speed without pressing keys
+        this.speedX = 0;
+        this.speedY = 0;
+        
+        if (kbd.up) {
+            this.y = -2;
+        }
+        
+        if (kbd.down) {
+            this.y = 2;
+        }
+        
+        if (kbd.left) {
+            this.x = 2;
+        }
+        
+        if (kbd.right) {
+            this.x = -2;
+        }
+    }
+    
     // Draw the player to screen
     this.update = function() {
         ctx = game.context;
 		ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
-		ctx.drawImage(this.color, this.x, this.y, this.width, this.height);
+		//ctx.drawImage(this.color, this.x, this.y, this.width, this.height);
     }
 }
 
 function update() {
+    
+    // Clears screen of previous frames
+    game.clear();
+    
+    // Move stuff
+	player.move();
+    
     // draw images
     player.update();
 }
