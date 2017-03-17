@@ -90,6 +90,13 @@ function Player(width, height, color, x, y) {
         }
     }
     
+    this.collisionDetect() {
+        
+        if (this.y + this.height >= game.canvas.height) {
+            this.y = 0;
+        }
+    }
+    
     // Draw the player to screen
     this.update = function() {
         ctx = game.context;
