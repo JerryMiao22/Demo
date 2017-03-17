@@ -27,18 +27,21 @@ var kbd = function () {
 
 // add keyevent listener to track arrow key actions
 document.addEventListener("keydown", function (e) {
-  if (e.keyCode === 39 || e.keyCode === 68) {
-    kbd.right = true;
-  }
-  else if (e.keyCode === 38 || e.keyCode === 87 || e.keyCode === 32) {
-    kbd.up = true;
-  }
-  else if (e.keyCode === 37 || e.keyCode === 65) {
-    kbd.left = true;
-  }
-  else if (e.keyCode === 80) {
-    kbd.p = true;
-  }
+    if (e.keyCode === 39 || e.keyCode === 68) {
+        kbd.right = true;
+    }
+    else if (e.keyCode === 38 || e.keyCode === 87 || e.keyCode === 32) {
+        kbd.up = true;
+    }
+    else if (e.keyCode === 37 || e.keyCode === 65) {
+        kbd.left = true;
+    }
+    else if (e.keyCode === 40 || e.keyCode === 83) {
+        kbd.down = true;
+    }
+    else if (e.keyCode === 80) {
+        kbd.p = true;
+    }
 }, false);
 
 document.addEventListener("keyup", function (e) {
@@ -71,19 +74,19 @@ function Player(width, height, color, x, y) {
         this.speedY = 0;
         
         if (kbd.up) {
-            this.y = -2;
+            this.y += -2;
         }
         
         if (kbd.down) {
-            this.y = 2;
+            this.y += 2;
         }
         
         if (kbd.left) {
-            this.x = 2;
+            this.x += -2;
         }
         
         if (kbd.right) {
-            this.x = -2;
+            this.x += 2;
         }
     }
     
