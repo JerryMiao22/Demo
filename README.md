@@ -2,6 +2,7 @@
 <h2> To-Do List </h2>
 
 <ul>
-<li></li>
+<li>Collision Detection</li>
 </ul>
-no fuck that 
+
+<h2> 
