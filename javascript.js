@@ -60,6 +60,9 @@ function startGame() {
 }
 
 function Player(width, height, color, x, y) {
+    this.landed = false;
+    this.jumping = false;
+    this.jumpCounter = 0;
     this.width = width;
     this.height = height;
     this.color = color;
@@ -67,19 +70,34 @@ function Player(width, height, color, x, y) {
     this.y = y;
     this.speedX = 0;
     this.speedY = 0;
+    this.gravity = 5;
     
     this.move = function() {
         // Speed without pressing keys
         this.speedX = 0;
         this.speedY = 0;
         
-        if (kbd.up) {
-            this.y += -2;
+        // Check if jump button is pressed
+        if (kbd.up && this.landed) {
+            this.jumping = true;
+            this.landed = false;
         }
         
-        if (kbd.down) {
-            this.y += 2;
+        // Smooth jumping
+        if (this.jumping) {
+            this.y += -30;
+            this.jumpCounter++;
         }
+        
+        // reset jump if we're at top of jump
+        if (this.jumpCounter === 7) {
+            this.jumping = false;
+            this.jumpCounter = 0;
+        }
+        
+        this.speedY += this.gravity;
+        
+        this.y += this.speedY;
         
         if (kbd.left) {
             this.x += -2;
@@ -94,8 +112,9 @@ function Player(width, height, color, x, y) {
     
     this.collisionDetect = function() {
         
-        if (this.y + this.height >= game.canvas.height) {
-            this.y = 0;
+        // check for colliding with bottom of screen
+        if (this.y >= game.canvas.height - this.height - 5) {
+            this.y = game.canvas.height - this.height - 5;
         }
     };
     
