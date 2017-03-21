@@ -88,14 +88,16 @@ function Player(width, height, color, x, y) {
         if (kbd.right) {
             this.x += 2;
         }
+        
+        this.collisionDetect();
     }
     
-    this.collisionDetect() {
+    this.collisionDetect = function() {
         
         if (this.y + this.height >= game.canvas.height) {
             this.y = 0;
         }
-    }
+    };
     
     // Draw the player to screen
     this.update = function() {
