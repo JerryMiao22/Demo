@@ -78,19 +78,17 @@ function Player(width, height, color, x, y) {
         this.speedY = 0;
         
         // Check if jump button is pressed
-//        if (kbd.up && this.landed) {
-        if (kbd.up) {
+        if (kbd.up && this.landed) {
             this.jumping = true;
+            console.log("Hello world");
             this.landed = false;
-            console.log(this.landed);
-       
         }
         
         // Smooth jumping
         if (this.jumping) {
             this.y += -30;
             this.jumpCounter++;
-            console.log(this.y);
+            this.landed = false;
         }
         
         // reset jump if we're at top of jump
@@ -119,6 +117,7 @@ function Player(width, height, color, x, y) {
         // check for colliding with bottom of screen
         if (this.y >= game.canvas.height - this.height - 5) {
             this.y = game.canvas.height - this.height - 5;
+            this.landed = true;
         }
     };
     
@@ -142,3 +141,4 @@ function update() {
     // draw images
     player.update();
 }
+
