@@ -78,15 +78,19 @@ function Player(width, height, color, x, y) {
         this.speedY = 0;
         
         // Check if jump button is pressed
-        if (kbd.up && this.landed) {
+//        if (kbd.up && this.landed) {
+        if (kbd.up) {
             this.jumping = true;
             this.landed = false;
+            console.log(this.landed);
+       
         }
         
         // Smooth jumping
         if (this.jumping) {
             this.y += -30;
             this.jumpCounter++;
+            console.log(this.y);
         }
         
         // reset jump if we're at top of jump
