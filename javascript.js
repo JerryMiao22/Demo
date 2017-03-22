@@ -1,8 +1,8 @@
 var game = {
     canvas : document.createElement("canvas"),
     start : function () {
-        this.canvas.width = 1280;
-        this.canvas.height = 720;
+        this.canvas.width = 640;
+        this.canvas.height = 480;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(update, 20);
@@ -54,9 +54,22 @@ game.start(); // canvas not created until this function is called
 
 // Global variables
 var player;
+var platforms = [];
 
 function startGame() {
-    player = new Player(30, 30, "red", 100, 100);
+    player = new Player(30, 30, "red", 100, game.canvas.height - 5);
+    
+    //platforms = [
+    //    new Platform   
+    //]
+}
+
+var Platform = function(x, y, height, width, color) {
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.height = height;
+    this.width = width;
 }
 
 function Player(width, height, color, x, y) {
