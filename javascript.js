@@ -57,19 +57,29 @@ var player;
 var platforms = [];
 
 function startGame() {
-    player = new Player(30, 30, "red", 100, game.canvas.height - 5);
+    // width, height, color, x, y
+    player = new Player(30, 30, "red", 100, 10);
     
-    //platforms = [
-    //    new Platform   
-    //]
+    platforms = [
+        // width, height, x, y, color
+        //new Platform (400, 300, 200, 200, "brown"),
+        new Platform (300, 100, 100, game.canvas.height - 100, "green")
+    ]
+    
 }
 
-var Platform = function(x, y, height, width, color) {
+var Platform = function(width, height, x, y, color) {
     this.x = x;
     this.y = y;
     this.color = color;
     this.height = height;
     this.width = width;
+    
+    this.draw = function() {
+        ctx = game.context;
+		ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
 }
 
 function Player(width, height, color, x, y) {
@@ -93,7 +103,6 @@ function Player(width, height, color, x, y) {
         // Check if jump button is pressed
         if (kbd.up && this.landed) {
             this.jumping = true;
-            console.log("Hello world");
             this.landed = false;
         }
         
@@ -127,15 +136,29 @@ function Player(width, height, color, x, y) {
     
     this.collisionDetect = function() {
         
+        for (var i = 0; i < platforms.length; i++) {
+			var platform = platforms[i];
+        }
+        
         // check for colliding with bottom of screen
         if (this.y >= game.canvas.height - this.height - 5) {
             this.y = game.canvas.height - this.height - 5;
             this.landed = true;
         }
+        
+        // Colliding with platform
+        else if (this.y + this.height >= platform.y
+                 && this.x + this.width >= platform.x
+                 && this.x <= platform.x + platform.width) {
+            console.log("collision!");
+            this.y = platform.y - this.height;
+            this.landed = true;
+        }
+        
     };
     
     // Draw the player to screen
-    this.update = function() {
+    this.draw = function() {
         ctx = game.context;
 		ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -152,6 +175,10 @@ function update() {
 	player.move();
     
     // draw images
-    player.update();
+    player.draw();
+    
+    for (var i = 0; i < platforms.length; i++) {
+        platforms[i].draw();
+    }
 }
 
