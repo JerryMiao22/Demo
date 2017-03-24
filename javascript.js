@@ -63,7 +63,7 @@ function startGame() {
     platforms = [
         // width, height, x, y, color
         //new Platform (400, 300, 200, 200, "brown"),
-        new Platform (300, 100, 100, game.canvas.height - 100, "green")
+        new Platform (300, 100, 0, game.canvas.height - 100, "green")
     ]
     
 }
@@ -146,13 +146,20 @@ function Player(width, height, color, x, y) {
             this.landed = true;
         }
         
-        // Colliding with platform
+        // Colliding with top of platform
         else if (this.y + this.height >= platform.y
                  && this.x + this.width >= platform.x
                  && this.x <= platform.x + platform.width) {
-            console.log("collision!");
             this.y = platform.y - this.height;
             this.landed = true;
+        }
+        
+        // Colliding with right side of platform
+        if (this.y + this.height >= platform.y
+                && this.y <= platform.y + platform.height
+                && this.x <= platform.x + platform.width) {
+            this.x = platform.x + platform.width;
+            console.log("collided!");
         }
         
     };
