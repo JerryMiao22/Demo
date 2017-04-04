@@ -55,15 +55,18 @@ game.start(); // canvas not created until this function is called
 // Global variables
 var player;
 var platforms = [];
-var door;
+var doors = [];
 
 function startGame() {
     // width, height, color, x, y
     player = new Player(30, 30, "gray", 100, 10);
     
-    // width, height, x, y, color
-    door = new Door(50, 65, 525, 185, "purple");
-    
+    doors = [
+        // width, height, x, y, color
+        new Door (55, 65, 525, 185, "purple"),
+        new Door (50, 65, 525, 185, "red")
+    ]
+        
     platforms = [
         // width, height, x, y, color
         //new Platform (400, 300, 200, 200, "brown"),
@@ -217,7 +220,9 @@ function update() {
     // draw images
     player.draw();
     
-    door.draw();
+    for (var i = 0; i < doors.length; i++) {
+        doors[i].draw();
+    }
     
     for (var i = 0; i < platforms.length; i++) {
         platforms[i].draw();
