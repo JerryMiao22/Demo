@@ -222,3 +222,4 @@ function update() {
         platforms[i].draw();
     }
 }
+fuck you 
