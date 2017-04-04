@@ -159,7 +159,7 @@ function Player(width, height, color, x, y) {
         }
         
         if (this.x + this.width >= game.canvas.width) {
-            this.x = canvas.width - this.width;
+            this.x = game.canvas.width - this.width;
         }
         
         else if (this.x <= 0) {
