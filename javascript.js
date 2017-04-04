@@ -61,7 +61,8 @@ function startGame() {
     // width, height, color, x, y
     player = new Player(30, 30, "gray", 100, 10);
     
-    door = new Door(20, 50, 200, 100, "purple");
+    // width, height, x, y, color
+    door = new Door(50, 65, 525, 185, "purple");
     
     platforms = [
         // width, height, x, y, color
@@ -222,4 +223,3 @@ function update() {
         platforms[i].draw();
     }
 }
-fuck you 
