@@ -125,7 +125,7 @@ function Player(width, height, color, x, y) {
         //this.speedY = 0;
         
         // Check if jump button is pressed
-        if (kbd.up && this.landed) {
+        if (kbd.up && !kbd.isAllowed && this.landed) {
             this.landed = false;
             this.speedY += -20;
         }
