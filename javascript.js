@@ -1,3 +1,6 @@
+// Constants
+//const GRAVITY = 
+
 var game = {
     canvas : document.createElement("canvas"),
     start : function () {
@@ -105,7 +108,6 @@ function Door(width, height, x, y, color) {
 
 function Player(width, height, color, x, y) {
     this.landed = false;
-    this.jumping = false;
     this.jumpCounter = 0;
     this.width = width;
     this.height = height;
@@ -114,42 +116,37 @@ function Player(width, height, color, x, y) {
     this.y = y;
     this.speedX = 0;
     this.speedY = 0;
-    this.gravity = 5;
+    this.gravity = 1;
     
     this.move = function() {
         // Speed without pressing keys
-        this.speedX = 0;
-        this.speedY = 0;
+        //this.speedX = 0;
+        //this.speedY = 0;
         
         // Check if jump button is pressed
         if (kbd.up && this.landed) {
-            this.jumping = true;
             this.landed = false;
+            this.speedY += -20;
         }
         
-        // Smooth jumping
-        if (this.jumping) {
-            this.y += -30;
-            this.jumpCounter++;
-            this.landed = false;
+        
+        if (!this.landed) {
+            this.speedY += this.gravity;
         }
         
-        // reset jump if we're at top of jump
-        if (this.jumpCounter === 7) {
-            this.jumping = false;
-            this.jumpCounter = 0;
-        }
-        
-        this.speedY += this.gravity;
         
         this.y += this.speedY;
+        this.x += this.speedX;
         
         if (kbd.left) {
-            this.x += -2;
+            this.speedX = -5;
         }
         
-        if (kbd.right) {
-            this.x += 2;
+        else if (kbd.right) {
+            this.speedX = 5;
+        }
+        else {
+            this.speedX = 0;
         }
         
         this.collisionDetect();
