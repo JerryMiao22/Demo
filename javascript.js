@@ -26,14 +26,17 @@ var kbd = function () {
     this.left = false;
     this.right = false;
     this.p = true;
+    this.isAllowed = true; // determine whether kbd input is allowed
 };
 
 // add keyevent listener to track arrow key actions
 document.addEventListener("keydown", function (e) {
+        console.log(kbd.isAllowed);
     if (e.keyCode === 39 || e.keyCode === 68) {
         kbd.right = true;
     }
-    else if (e.keyCode === 38 || e.keyCode === 87 || e.keyCode === 32) {
+    else if (kbd.isAllowed && (e.keyCode === 38 || e.keyCode === 87 || e.keyCode === 32)) {
+        kbd.isAllowed = false;
         kbd.up = true;
     }
     else if (e.keyCode === 37 || e.keyCode === 65) {
@@ -48,9 +51,8 @@ document.addEventListener("keydown", function (e) {
 }, false);
 
 document.addEventListener("keyup", function (e) {
-  if (e) {
+    kbd.isAllowed = true;
     kbd.up = kbd.left = kbd.right = kbd.down = kbd.p = false;
-  }
 }, false);
 
 game.start(); // canvas not created until this function is called
@@ -108,7 +110,6 @@ function Door(width, height, x, y, color) {
 
 function Player(width, height, color, x, y) {
     this.landed = false;
-    this.jumpCounter = 0;
     this.width = width;
     this.height = height;
     this.color = color;
@@ -134,10 +135,7 @@ function Player(width, height, color, x, y) {
             this.speedY += this.gravity;
         }
         
-        
-        this.y += this.speedY;
-        this.x += this.speedX;
-        
+        // Checking Left/Right movement
         if (kbd.left) {
             this.speedX = -5;
         }
@@ -145,9 +143,12 @@ function Player(width, height, color, x, y) {
         else if (kbd.right) {
             this.speedX = 5;
         }
-        else {
+        else if (this.landed) {
             this.speedX = 0;
         }
+        
+        this.y += this.speedY;
+        this.x += this.speedX;
         
         this.collisionDetect();
     }
