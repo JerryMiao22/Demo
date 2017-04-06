@@ -152,9 +152,9 @@ function Player(width, height, color, x, y) {
     
     this.collisionDetect = function() {
         
-//        for (var i = 0; i < platforms.length; i++) {
-//			var platform = platforms[i];
-//        }
+        for (var i = 0; i < platforms.length; i++) {
+			var platform = platforms[i];
+        }
         
         // Collide with right side
         if (this.x + this.width >= game.canvas.width) {
@@ -176,55 +176,55 @@ function Player(width, height, color, x, y) {
         else if (this.y <= 0) {
             this.y = 0;
         }
-//        
-//        // Collide with top of platform
-//        if (this.y + this.height >= platform.y) {
-//            
-//            if (this.x + this.width >= platform.x
-//               && this.x - platform.width <= platform.x) {
-//                this.y = platform.y - this.height;
-//                this.landed = true;
-//            }
-//        }
-//        
-//        // Collide with left side of platform
-//        else if (this.x + this.width >= platform.x) {
-//            this.x = platform.x - this.width;
-//        }
-//        
-//        else if (this.x - platform.width <= platform.x) {
-//            this.x = platform.x + platform.width;
-//        }
         
-        for (var i = 0; i < platforms.length; i++) {
-			var platform = platforms[i];
+        // Collide with top of platform
+        if (this.y + this.height >= platform.y) {
             
-			// check for platform contact
-			if (this.x >= platform.x - this.width
-				&& this.x <= platform.x + platform.width
-				&& this.y >= platform.y - this.height
-				&& this.y <= platform.y) {
-				
-				if (this.y + this.height <= platform.y + platform.height) {
-					this.y = platform.y - this.height;
-                    
-					this.landed = true;
-				}
-				
-				// Platform pushes player
-				else if (this.x + this.width <= platform.x + 3) {
-					
-					this.jumping = false;
-					this.x = platform.x - this.width;
-				}
-				
-				else {
-					this.jumping = false;
-					this.y = platform.y + platform.height;
-				}
-				
-			}			
-		}
+            if (this.x + this.width >= platform.x
+               && this.x - platform.width <= platform.x) {
+                this.y = platform.y - this.height;
+                this.landed = true;
+            }
+        }
+        
+        // Collide with left side of platform
+        else if (this.x + this.width >= platform.x) {
+            this.x = platform.x - this.width;
+        }
+        
+        else if (this.x - platform.width <= platform.x) {
+            this.x = platform.x + platform.width;
+        }
+        
+//        for (var i = 0; i < platforms.length; i++) {
+//			var platform = platforms[i];
+//            
+//			// check for platform contact
+//			if (this.x >= platform.x - this.width
+//				&& this.x <= platform.x + platform.width
+//				&& this.y >= platform.y - this.height
+//				&& this.y <= platform.y) {
+//				
+//				if (this.y + this.height <= platform.y + platform.height) {
+//					this.y = platform.y - this.height;
+//                    
+//					this.landed = true;
+//				}
+//				
+//				// Platform pushes player
+//				else if (this.x + this.width <= platform.x + 3) {
+//					
+//					this.jumping = false;
+//					this.x = platform.x - this.width;
+//				}
+//				
+//				else {
+//					this.jumping = false;
+//					this.y = platform.y + platform.height;
+//				}
+//				
+//			}			
+//		}
     };
     
     // Draw the player to screen
