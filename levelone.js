@@ -224,5 +224,11 @@ function update() {
     
     for (var i = 0; i < platforms.length; i++) {
         platforms[i].draw();
+    }    
+    // draw images
+    player.draw();
+    
+    for (var i = 0; i < platforms.length; i++) {
+        platforms[i].draw();
     }
 }
