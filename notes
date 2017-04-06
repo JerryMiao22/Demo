@@ -1,0 +1,26 @@
+//
+for (var i = 0; i < platforms.length; i++) {
+			var platform = platforms[i];
+        }
+
+if (this.x + this.width >= game.canvas.width) {
+            this.x = game.canvas.width - this.width;
+        }
+        
+        else if (this.x <= 0) {
+            this.x = 0;
+        }
+// check for colliding with bottom of screen
+        if (this.y >= game.canvas.height - this.height) {           
+            this.y = game.canvas.height - this.height;
+            this.landed = true;
+        }
+
+
+
+
+//
+// Collide with left side of platform
+if (this.x + this.width >= platform.width) {
+	this.x = platform.width - this.width;
+}
