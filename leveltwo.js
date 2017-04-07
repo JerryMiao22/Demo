@@ -62,20 +62,22 @@ var player;
 var platforms = [];
 var doors = [];
 
+var PLAYER_SIZE = 30;
+
 function startGame() {
     // width, height, color, x, y
-    player = new Player(30, 30, "gray", 100, 10);
+    player = new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 100, 10);
     
-    doors = [
-        // width, height, x, y, color
-        new Door (55, 65, 525, 185, "purple"),
-        new Door (50, 65, 525, 185, "red")
-    ]
+//    doors = [
+//        // width, height, x, y, color
+//        new Door (55, 65, 525, 185, "purple"),
+//        new Door (50, 65, 525, 185, "red")
+//    ]
         
     platforms = [
         // width, height, x, y, color
         //new Platform (400, 300, 200, 200, "brown"),
-        new Platform (100, 35, 100, game.canvas.height - 35, "black")
+        new Platform (100, 35, 100, game.canvas.height - 75, "black")
     ]
     
 }
@@ -177,54 +179,20 @@ function Player(width, height, color, x, y) {
             this.y = 0;
         }
         
-        // Collide with top of platform
-        if (this.y + this.height >= platform.y) {
-            
-            if (this.x + this.width >= platform.x
-               && this.x - platform.width <= platform.x) {
-                this.y = platform.y - this.height;
-                this.landed = true;
-            }
-        }
-        
-        // Collide with left side of platform
-        else if (this.x + this.width >= platform.x) {
-            this.x = platform.x - this.width;
-        }
-        
-        else if (this.x - platform.width <= platform.x) {
-            this.x = platform.x + platform.width;
-        }
-        
-//        for (var i = 0; i < platforms.length; i++) {
-//			var platform = platforms[i];
+//        // Collide with top of platform
+//        if (this.y + this.height >= platform.y
+//           && this.y - platform.height <= platform.y) {
 //            
-//			// check for platform contact
-//			if (this.x >= platform.x - this.width
-//				&& this.x <= platform.x + platform.width
-//				&& this.y >= platform.y - this.height
-//				&& this.y <= platform.y) {
-//				
-//				if (this.y + this.height <= platform.y + platform.height) {
-//					this.y = platform.y - this.height;
-//                    
-//					this.landed = true;
-//				}
-//				
-//				// Platform pushes player
-//				else if (this.x + this.width <= platform.x + 3) {
-//					
-//					this.jumping = false;
-//					this.x = platform.x - this.width;
-//				}
-//				
-//				else {
-//					this.jumping = false;
-//					this.y = platform.y + platform.height;
-//				}
-//				
-//			}			
-//		}
+//            if (this.x + this.width >= platform.x
+//               && this.x - platform.width <= platform.x) {
+//                this.y = platform.y - this.height;
+//                this.landed = true;
+//            }
+//        }
+        
+        //if ()
+        
+        
     };
     
     // Draw the player to screen
