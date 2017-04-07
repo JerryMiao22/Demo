@@ -68,16 +68,16 @@ function startGame() {
     // width, height, color, x, y
     player = new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 100, 10);
     
-//    doors = [
-//        // width, height, x, y, color
-//        new Door (55, 65, 525, 185, "purple"),
-//        new Door (50, 65, 525, 185, "red")
-//    ]
+    doors = [
+        // width, height, x, y, color
+        new Door (55, 65, 550, game.canvas.height - 115, "purple")]
         
     platforms = [
         // width, height, x, y, color
         //new Platform (400, 300, 200, 200, "brown"),
-        new Platform (100, 35, 100, game.canvas.height - 75, "black")
+        new Platform (game.canvas.width, 50, 0, game.canvas.height - 50, "black"),
+        new Platform (game.canvas.width / 4, 50, game.canvas.width / 4, game.canvas.height - 100, "black"),
+        new Platform (game.canvas.width / 4, 100, game.canvas.width / 2, game.canvas.height - 150, "black")
     ]
     
 }
@@ -190,25 +190,14 @@ function Player(width, height, color, x, y) {
 //            }
 //        }
         
-	// Check to see if Player is within x boundaries of Platform
         if (this.x + this.width >= platform.x
            && this.x - platform.width <= platform.x) {
             
-	    // Collide with top of platform
             if (this.y + this.height >= platform.y
                && this.y - platform.height <= platform.y) {
                 this.y = platform.y - this.width;
                 this.landed = true;
             }
-            
-	    // Collide with bottom of platform
-            else if (this.y <= platform.y + platform.height) {
-                this.y <= platform.y + platform.height;
-            }
-            
-//            else {
-//                this.landed = false;
-//            }
         }
         
         
