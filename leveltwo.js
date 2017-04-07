@@ -190,7 +190,19 @@ function Player(width, height, color, x, y) {
 //            }
 //        }
         
-        //if ()
+        if (this.x >= platform.x - this.width
+           && this.x <= platform.x + platform.width) {
+            
+            if (this.y + this.height >= platform.y
+               && this.y - platform.height <= platform.y) {
+                this.y = platform.y - this.width;
+                this.landed = true;
+            }
+            
+            else {
+                this.landed = false;
+            }
+        }
         
         
     };
