@@ -190,18 +190,25 @@ function Player(width, height, color, x, y) {
 //            }
 //        }
         
-        if (this.x >= platform.x - this.width
-           && this.x <= platform.x + platform.width) {
+	// Check to see if Player is within x boundaries of Platform
+        if (this.x + this.width >= platform.x
+           && this.x - platform.width <= platform.x) {
             
+	    // Collide with top of platform
             if (this.y + this.height >= platform.y
                && this.y - platform.height <= platform.y) {
                 this.y = platform.y - this.width;
                 this.landed = true;
             }
             
-            else {
-                this.landed = false;
+	    // Collide with bottom of platform
+            else if (this.y <= platform.y + platform.height) {
+                this.y <= platform.y + platform.height;
             }
+            
+//            else {
+//                this.landed = false;
+//            }
         }
         
         
