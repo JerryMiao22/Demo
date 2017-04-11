@@ -2,6 +2,22 @@
 // object, a doors array, and a platforms array.
 // Access the first level with LEVELS[0], and so on
 const LEVELS = [
+    
+    // Level #0
+    {
+        // width, height, color, x, y
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 10, 100), 
+        doors : [
+            // width, height, x, y, color
+            new Door (55, 65, 525, 480 - 250 - 65, "purple")
+            //new Door (50, 65, 525, 185, "red")
+        ],
+        platforms : [
+            // width, height, x, y, color
+            //new Platform (400, 300, 200, 200, "brown"),
+            new Platform (640, 250, 0, 480 - 250, "black")
+        ]
+    },
 
     // Level #1
     {
