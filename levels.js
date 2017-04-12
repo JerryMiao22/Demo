@@ -74,5 +74,25 @@ const LEVELS = [
             new Platform (30, 40, 640 / 4 - 30, 480 - 435, "red"),
             new Platform (640 / 4, 120, 640 - 640 / 4, 480 - 120, "black")
         ]
+    },
+    
+    // Level #4
+    {
+        // width, height, color, x, y
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 310),
+        doors : [
+            // width, height, x, y, color
+            new Door (55, 65, 550, 480 - 120 - 65, "purple")
+        ],
+        platforms : [
+            // width, height, x, y, color
+            //new Platform (400, 300, 200, 200, "brown"),
+            new Platform (640 / 4, 120, 0, 480 - 120, "black"),
+            new Platform (640 / 2, 435, 640 / 4, 480 - 435, "black"),
+            new Platform (30, 40, 640 / 4 - 30, 480 - 225, "red"),
+            new Platform (30, 40, 0, 480 - 330, "red"),
+            new Platform (30, 40, 640 / 4 - 30, 480 - 435, "red"),
+            new Platform (640 / 4, 120, 640 - 640 / 4, 480 - 120, "black")
+        ]
     }
 ];
