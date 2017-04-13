@@ -202,6 +202,11 @@ function Player(width, height, color, x, y) {
     
     // Checks for collisions between player and various obstacles
     this.collisionDetect = function() {
+	    
+	//door === player
+        if (collide(doors[0], player) !== 'none') {
+            loadLevel(LEVELS[(++currentLevel) % LEVELS.length]);
+        }
         
         // Create a variable that allows us to adjust behavior 
         // depending on whether a collision occurs on this frame.
