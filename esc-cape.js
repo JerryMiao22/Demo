@@ -16,6 +16,12 @@ var platforms;
 var doors;
 var currentLevel;
 
+var platformImg = new Image();
+platformImg.src = "imgs/L1-Floor.png";
+
+var doorImg = new Image();
+doorImg.src = "imgs/doorclose.png";
+
 
 // Game object for drawing on the canvas
 var game = {
@@ -112,8 +118,9 @@ var Platform = function(width, height, x, y, color) {
     // Renders the platform to the screen
     this.draw = function() {
         ctx = game.context;
-		ctx.fillStyle = color;
+	ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
+	ctx.drawImage(platformImg, this.x, this.y, this.width, this.height);
     }
 } // end Platform
 
@@ -132,8 +139,9 @@ function Door(width, height, x, y, color) {
     // Renders the door to the screen
     this.draw = function() {
         ctx = game.context;
-		ctx.fillStyle = color;
+	ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
+	ctx.drawImage(doorImg, this.x, this.y, this.width, this.height);
     }
 } // end Door
 
