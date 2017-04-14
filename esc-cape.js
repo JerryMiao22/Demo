@@ -1,7 +1,7 @@
 /**
  * Esc-cape
  *
- * A platformer game by Faisal, Aaron, Vlad and Eric
+ * A platformer game by Faisal with Aaron, Vlad and Eric
  *
  */
 
@@ -16,11 +16,11 @@ var platforms;
 var doors;
 var currentLevel;
 
-var platformImg = new Image();
-platformImg.src = "imgs/L1-Floor.png";
+var platformL1P1 = new Image();
+platformL1P1.src = "imgs/L1-Floor.png";
 
 var doorImg = new Image();
-doorImg.src = "imgs/doorclose.png";
+doorImg.src = "imgs/doorclosed2.png";
 
 
 // Game object for drawing on the canvas
@@ -108,19 +108,17 @@ function loadLevel(level) {
  * Represents a platform with a width, height, 
  * x and y coordinate for the top left corner, and color
  */
-var Platform = function(width, height, x, y, color) {
+var Platform = function(width, height, x, y, img) {
     this.x = x;
     this.y = y;
-    this.color = color;
+    this.img = img;
     this.height = height;
     this.width = width;
     
     // Renders the platform to the screen
     this.draw = function() {
         ctx = game.context;
-	ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-	ctx.drawImage(platformImg, this.x, this.y, this.width, this.height);
+        ctx.drawImage(platformL1P1, this.x, this.y, this.width, this.height);
     }
 } // end Platform
 
@@ -129,19 +127,17 @@ var Platform = function(width, height, x, y, color) {
  * Represents a door with a width, height, 
  * x and y coordinate for the top left corner, and color
  */
-function Door(width, height, x, y, color) {
+function Door(width, height, x, y, img) {
     this.x = x;
     this.y = y;
-    this.color = color;
+    this.img = img;
     this.height = height;
     this.width = width;
     
     // Renders the door to the screen
     this.draw = function() {
         ctx = game.context;
-	ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-	ctx.drawImage(doorImg, this.x, this.y, this.width, this.height);
+        ctx.drawImage(doorImg, this.x, this.y, this.width, this.height);
     }
 } // end Door
 
@@ -343,7 +339,7 @@ function update() {
 
 // Starts a new game from scratch
 function init() {
-    currentLevel = 2;
+    currentLevel = 1;
     game.start(); // canvas not created until this function is called
     loadLevel(LEVELS[currentLevel]);
 } // end init
