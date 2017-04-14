@@ -30,8 +30,8 @@ const LEVELS = [
             // width, height, x, y, color
             new Platform (640, 50, 0, 480 - 50, "black"),
             new Platform (100, 30, 130, 370, "black"),
-            new Platform (150, 30, 160, 280, "black"),
-            new Platform (300, 30, 280, 250, "black")
+            //new Platform (150, 30, 160, 280, "black"),
+            new Platform (100, 30, 500, 250, "black")
         ]
     },
     
