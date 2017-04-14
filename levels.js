@@ -21,17 +21,19 @@ const LEVELS = [
     // Level #1
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 20, 200), 
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 20, 300), 
         doors : [
             // width, height, x, y, color
-            new Door (55, 65, 525, 185, doorImg)
+            new Door (55, 65, 525, 60, doorImg)
         ],
         platforms : [
             // width, height, x, y, color
             new Platform (640, 50, 0, 480 - 50, "black"),
-            new Platform (100, 30, 130, 370, "black"),
-            //new Platform (150, 30, 160, 280, "black"),
-            new Platform (100, 30, 500, 250, "black")
+            new Platform (100, 30, 475, 350, "black"),
+            new Platform (110, 30, 300, 280, "black"),
+            new Platform (150, 30, 60, 250, "black"),
+            new Platform (120, 30, 270, 150, "black"),
+            new Platform (200, 30, 640 - 200, 125, "black")
         ]
     },
     
