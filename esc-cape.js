@@ -16,11 +16,23 @@ var platforms;
 var doors;
 var currentLevel;
 
-var platformL1P1 = new Image();
-platformL1P1.src = "imgs/L1-Floor.png";
+var testImg = new Image();
+testImg.src = "imgs/black.png";
 
 var doorImg = new Image();
 doorImg.src = "imgs/doorclosed2.png";
+
+var entranceImg = new Image();
+entranceImg.src = "imgs/dooropen2.png";
+
+var L0Floor = new Image();
+L0Floor.src = "imgs/L0-Floor.png";
+
+var L1Floor = new Image();
+L1Floor.src = "imgs/L1-Floor.png";
+
+var L1P1 = new Image();
+L1P1.src = "imgs/L1P1.png"
 
 
 // Game object for drawing on the canvas
@@ -118,7 +130,7 @@ var Platform = function(width, height, x, y, img) {
     // Renders the platform to the screen
     this.draw = function() {
         ctx = game.context;
-        ctx.drawImage(platformL1P1, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 } // end Platform
 
@@ -339,7 +351,7 @@ function update() {
 
 // Starts a new game from scratch
 function init() {
-    currentLevel = 1;
+    currentLevel = 0;
     game.start(); // canvas not created until this function is called
     loadLevel(LEVELS[currentLevel]);
 } // end init
