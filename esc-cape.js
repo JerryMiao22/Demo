@@ -31,6 +31,9 @@ L0Floor.src = "imgs/L0-Floor.png";
 var L1Floor = new Image();
 L1Floor.src = "imgs/L1-Floor.png";
 
+var L1BG = new Image();
+L1BG.src = "imgs/L1BG.png";
+
 var L1P1 = new Image();
 L1P1.src = "imgs/L1P1.png"
 
