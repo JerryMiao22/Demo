@@ -14,6 +14,7 @@ const PLAYER_SIZE = 30;
 var player;
 var platforms;
 var doors;
+var spikes;
 var currentLevel;
 
 var playerImg = new Image();
@@ -119,6 +120,7 @@ function loadLevel(level) {
     player = level.player;
     platforms = level.platforms;
     doors = level.doors;
+	spikes = level.spikes;
 } // end loadLevel
 
 
@@ -158,6 +160,25 @@ function Door(width, height, x, y, img) {
         ctx.drawImage(doorImg, this.x, this.y, this.width, this.height);
     }
 } // end Door
+
+/**
+ * Represents a spike with a width, height, 
+ * x and y coordinate for the top left corner, and color
+ */
+function Spike(width, height, x, y, color) {
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.height = height;
+    this.width = width;
+    
+    // Renders the spike to the screen
+    this.draw = function() {
+        ctx = game.context;
+		ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+} // end Spike
 
 
 /**
@@ -352,6 +373,9 @@ function update() {
     
     // Draw platforms
     platforms.forEach((p) => p.draw());
+	
+	// Draw spikes
+    spikes.forEach((s) => s.draw());
 } // end update
 
 
