@@ -15,7 +15,10 @@ const LEVELS = [
         platforms : [
             // width, height, x, y, img
             new Platform (640, 250, 0, 480 - 250, L0Floor)
-        ]
+        ],
+		spikes : [
+			new Spike (100, 100, 320, 240, "red")
+		]
     },
 
     // Level #1
@@ -46,7 +49,10 @@ const LEVELS = [
             new Platform (120, 30, 270, 150, L1P1),
             // Platform 5
             new Platform (200, 30, 640 - 200, 125, L1P1)
-        ]
+        ],
+		spikes : [
+			new Spike (100, 100, 320, 240, "red")
+		]
     },
     
     // Level #2
@@ -59,12 +65,14 @@ const LEVELS = [
         ],
         platforms : [
             // width, height, x, y, color
-            //new Platform (400, 300, 200, 200, "brown"),
             new Platform (640 / 3, 120, 0, 480 - 120, testImg),
             new Platform (640 / 6, 200, 640 / 3, 480 - 200, testImg),
             new Platform (640 / 6, 280, 640 / 3 + 640 / 6, 480 - 280, testImg),
             new Platform (640 / 3, 120, 640 - 640 / 3, 480 - 120, testImg)
-        ]
+        ],
+		spikes : [
+			new Spike (100, 100, 320, 240, "red")
+		]
     },
     
     // Level #3
@@ -77,14 +85,16 @@ const LEVELS = [
         ],
         platforms : [
             // width, height, x, y, color
-            //new Platform (400, 300, 200, 200, "brown"),
             new Platform (640 / 4, 120, 0, 480 - 120, testImg),
             new Platform (640 / 2, 435, 640 / 4, 480 - 435, testImg),
             new Platform (30, 40, 640 / 4 - 30, 480 - 225, testImg),
             new Platform (30, 40, 0, 480 - 330, testImg),
             new Platform (30, 40, 640 / 4 - 30, 480 - 435, testImg),
             new Platform (640 / 4, 120, 640 - 640 / 4, 480 - 120, testImg)
-        ]
+        ],
+		spikes : [
+			new Spike (100, 100, 320, 240, "red")
+		]
     },
     
     // Level #4
@@ -97,13 +107,15 @@ const LEVELS = [
         ],
         platforms : [
             // width, height, x, y, color
-            //new Platform (400, 300, 200, 200, "brown"),
             new Platform (640 / 4, 240, 0, 480 - 240, testImg),
             new Platform (640 / 4 - 25, 200, 0, 0, testImg),
             new Platform (80, 20, 230, 135, testImg),
             new Platform (80, 20, 380, 340, testImg),
             new Platform (640 / 4 - 25, 175, 640 - 135, 480 - 175, testImg),
             new Platform (640 / 4, 240, 640 - 160, 0, testImg)
-        ]
+        ],
+		spikes : [
+			new Spike (100, 100, 320, 240, "red")
+		]
     }
 ];
