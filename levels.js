@@ -6,7 +6,7 @@ const LEVELS = [
     // Level #0
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 10, 100), 
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, playerImg, 10, 100), 
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 525, 480 - 250 - 65, doorImg)
@@ -21,7 +21,7 @@ const LEVELS = [
     // Level #1
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 80, 350), 
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, playerImg, 80, 350), 
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 525, 60, doorImg),
@@ -52,7 +52,7 @@ const LEVELS = [
     // Level #2
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 100, 10),
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, playerImg, 100, 10),
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 550, 480 - 120 - 65, doorImg)
@@ -70,7 +70,7 @@ const LEVELS = [
     // Level #3
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 310),
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, playerImg, 50, 310),
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 550, 480 - 120 - 65, doorImg)
@@ -80,9 +80,9 @@ const LEVELS = [
             //new Platform (400, 300, 200, 200, "brown"),
             new Platform (640 / 4, 120, 0, 480 - 120, testImg),
             new Platform (640 / 2, 435, 640 / 4, 480 - 435, testImg),
-            new Platform (30, 40, 640 / 4 - 30, 480 - 225, "red"),
-            new Platform (30, 40, 0, 480 - 330, "red"),
-            new Platform (30, 40, 640 / 4 - 30, 480 - 435, "red"),
+            new Platform (30, 40, 640 / 4 - 30, 480 - 225, testImg),
+            new Platform (30, 40, 0, 480 - 330, testImg),
+            new Platform (30, 40, 640 / 4 - 30, 480 - 435, testImg),
             new Platform (640 / 4, 120, 640 - 640 / 4, 480 - 120, testImg)
         ]
     },
@@ -90,7 +90,7 @@ const LEVELS = [
     // Level #4
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 310),
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, playerImg, 50, 310),
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 550, 480 - 120 - 65, doorImg)
@@ -100,9 +100,9 @@ const LEVELS = [
             //new Platform (400, 300, 200, 200, "brown"),
             new Platform (640 / 4, 120, 0, 480 - 120, testImg),
             new Platform (640 / 2, 435, 640 / 4, 480 - 435, testImg),
-            new Platform (30, 40, 640 / 4 - 30, 480 - 225, "red"),
-            new Platform (30, 40, 0, 480 - 330, "red"),
-            new Platform (30, 40, 640 / 4 - 30, 480 - 435, "red"),
+            new Platform (30, 40, 640 / 4 - 30, 480 - 225, testImg),
+            new Platform (30, 40, 0, 480 - 330, testImg),
+            new Platform (30, 40, 640 / 4 - 30, 480 - 435, testImg),
             new Platform (640 / 4, 120, 640 - 640 / 4, 480 - 120, testImg)
         ]
     }
