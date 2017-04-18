@@ -381,7 +381,7 @@ function update() {
 
 // Starts a new game from scratch
 function init() {
-    currentLevel = 4;
+    currentLevel = 5;
     game.start(); // canvas not created until this function is called
     loadLevel(LEVELS[currentLevel]);
 } // end init
