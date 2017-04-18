@@ -17,7 +17,7 @@ var doors;
 var currentLevel;
 
 var playerImg = new Image();
-playerImg.src = "imgs/testplayer.png";
+playerImg.src = "imgs/testplayer1.png";
 
 var testImg = new Image();
 testImg.src = "imgs/black.png";
