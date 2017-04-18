@@ -17,7 +17,7 @@ const LEVELS = [
             new Platform (640, 250, 0, 480 - 250, L0Floor)
         ],
 		spikes : [
-			new Spike (100, 100, 320, 240, "red")
+			new Spike (0, 0, 320, 240, "red")
 		]
     },
 
@@ -103,7 +103,7 @@ const LEVELS = [
         player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 310),
         doors : [
             // width, height, x, y, color
-            new Door (55, 65, 550, 480 - 175 - 65, doorImg)
+            new Door (55, 65, 585, 480 - 175 - 65, doorImg)
         ],
         platforms : [
             // width, height, x, y, color
@@ -111,11 +111,42 @@ const LEVELS = [
             new Platform (640 / 4 - 25, 200, 0, 0, testImg),
             new Platform (80, 20, 230, 135, testImg),
             new Platform (80, 20, 380, 340, testImg),
-            new Platform (640 / 4 - 25, 175, 640 - 135, 480 - 175, testImg),
-            new Platform (640 / 4, 240, 640 - 160, 0, testImg)
+            new Platform (640 / 4 - 25, 175, 640 - 100, 480 - 175, testImg),
+            new Platform (640 / 4, 240, 640 - 100, 0, testImg)
         ],
 		spikes : [
-			new Spike (100, 100, 320, 240, "red")
+            // width, height, x, y, color
+			new Spike (380, 100, 160, 480 - 100, "red")
+		]
+    },
+    
+    // Level #5
+    {
+        // width, height, color, x, y
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 75, 390),
+        doors : [
+            // width, height, x, y, color
+            new Door (55, 65, 585, 0, doorImg)
+        ],
+        platforms : [
+            // width, height, x, y, color
+            new Platform (100, 30, 0, 480 - 30, testImg),
+            new Platform (100, 30, 100, 480 - 30, testImg),
+            new Platform (100, 30, 200, 480 - 30, testImg),
+            new Platform (100, 30, 300, 480 - 30, testImg),
+            new Platform (100, 30, 400, 480 - 30, testImg),
+            new Platform (100, 30, 500, 480 - 30, testImg),
+            new Platform (40, 30, 600, 480 - 30, testImg),
+            
+            
+            // Entrance Door
+            new Platform (55, 65, 0, 480 - 95, entranceImg),
+            new Platform (500, 30, 0, 480 - 130, testImg),
+            new Platform (20, 100, 620, 480 - 130, testImg)
+        ],
+		spikes : [
+            // width, height, x, y, color
+			new Spike (0, 0, 0, 480 - 100, "red")
 		]
     }
 ];
