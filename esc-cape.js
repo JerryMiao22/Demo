@@ -16,6 +16,9 @@ var platforms;
 var doors;
 var currentLevel;
 
+var playerImg = new Image();
+playerImg.src = "imgs/testplayer.png";
+
 var testImg = new Image();
 testImg.src = "imgs/black.png";
 
@@ -161,10 +164,10 @@ function Door(width, height, x, y, img) {
  * Represents a Player, which has a width, height, color, x and y position
  * and the ability to move, jump, stand on platforms, etc.
  */
-function Player(width, height, color, x, y) {
+function Player(width, height, img, x, y) {
     this.width = width;
     this.height = height;
-    this.color = color;
+    this.img = img;
     this.x = x;
     this.y = y;
     this.speedX = 0;
@@ -291,8 +294,8 @@ function Player(width, height, color, x, y) {
     // Draw the player to screen
     this.draw = function() {
         ctx = game.context;
-		ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+		//ctx.fillStyle = color;
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 		//ctx.drawImage(this.color, this.x, this.y, this.width, this.height);
     }
 } // end Player
