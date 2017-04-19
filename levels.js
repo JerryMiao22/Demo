@@ -130,6 +130,7 @@ const LEVELS = [
         ],
         platforms : [
             // width, height, x, y, color
+            // Bottom Floor
             new Platform (100, 30, 0, 480 - 30, testImg),
             new Platform (100, 30, 100, 480 - 30, testImg),
             new Platform (100, 30, 200, 480 - 30, testImg),
@@ -138,11 +139,40 @@ const LEVELS = [
             new Platform (100, 30, 500, 480 - 30, testImg),
             new Platform (40, 30, 600, 480 - 30, testImg),
             
-            
             // Entrance Door
             new Platform (55, 65, 0, 480 - 95, entranceImg),
-            new Platform (500, 30, 0, 480 - 130, testImg),
-            new Platform (20, 100, 620, 480 - 130, testImg)
+            
+            // First floor
+            new Platform (100, 30, 0, 350, testImg),
+            new Platform (100, 30, 100, 350, testImg),
+            new Platform (100, 30, 200, 350, testImg),
+            new Platform (100, 30, 300, 350, testImg),
+            new Platform (100, 30, 400, 350, testImg),
+            
+            // Second floor
+            new Platform (100, 30, 140, 250, testImg),
+            new Platform (100, 30, 240, 250, testImg),
+            new Platform (100, 30, 340, 250, testImg),
+            new Platform (100, 30, 440, 250, testImg),
+            new Platform (100, 30, 540, 250, testImg),
+            
+            // Third Floor
+            new Platform (100, 30, 0, 150, testImg),
+            new Platform (100, 30, 100, 150, testImg),
+            new Platform (100, 30, 200, 150, testImg),
+            new Platform (100, 30, 300, 150, testImg),
+            new Platform (100, 30, 400, 150, testImg),
+            
+            // Fourth floor
+            new Platform (100, 30, 140, 65, testImg),
+            new Platform (100, 30, 240, 65, testImg),
+            new Platform (100, 30, 340, 65, testImg),
+            new Platform (100, 30, 440, 65, testImg),
+            new Platform (100, 30, 540, 65, testImg)
+            
+            // Right Wall
+            //new Platform (25, 100, 640 - 25, 480 - 130, testImg),
+            //new Platform (25, 100, 640 - 25, 480 - 230, testImg)
         ],
 		spikes : [
             // width, height, x, y, color
