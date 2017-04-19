@@ -39,7 +39,23 @@ var L1BG = new Image();
 L1BG.src = "imgs/L1BG.png";
 
 var L1P1 = new Image();
-L1P1.src = "imgs/L1P1.png"
+L1P1.src = "imgs/L1P1.png";
+
+// Spike pointing Up
+var L5Spike1 = new Image();
+L5Spike1.src = "imgs/L5Spike1.png";
+
+// Spike pointing Left
+var L5Spike2 = new Image();
+L5Spike2.src = "imgs/L5Spike2.png";
+
+// Spike pointing Down
+var L5Spike3 = new Image();
+L5Spike3.src = "imgs/L5Spike3.png";
+
+// Spike pointing Right
+var L5Spike4 = new Image();
+L5Spike4.src = "imgs/L5Spike4.png";
 
 
 // Game object for drawing on the canvas
@@ -165,18 +181,17 @@ function Door(width, height, x, y, img) {
  * Represents a spike with a width, height, 
  * x and y coordinate for the top left corner, and color
  */
-function Spike(width, height, x, y, color) {
+function Spike(width, height, x, y, img) {
     this.x = x;
     this.y = y;
-    this.color = color;
+    this.img = img;
     this.height = height;
     this.width = width;
     
     // Renders the spike to the screen
     this.draw = function() {
         ctx = game.context;
-		ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 } // end Spike
 
@@ -381,7 +396,7 @@ function update() {
 
 // Starts a new game from scratch
 function init() {
-    currentLevel = 5;
+    currentLevel = 6;
     game.start(); // canvas not created until this function is called
     loadLevel(LEVELS[currentLevel]);
 } // end init
