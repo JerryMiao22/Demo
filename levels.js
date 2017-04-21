@@ -205,28 +205,5 @@ const LEVELS = [
             // width, height, x, y, img
             new Spike (20, 290, 180, 100, L6SpikeLeft)
 		]
-    },
-    
-    // Aaron Level 7
-    {
-        // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 30),
-        doors : [
-            // width, height, x, y, color
-            new Door (55, 65, 575, 385, doorImg)
-        ],
-        platforms : [
-            // width, height, x, y, color
-            // Bottom Floor
-            new Platform (100, 400, 0, 450, testImg),
-            new Platform (100, 200, 0, 450, testImg),
-            new Platform (200, 400, 0, 450, testImg),
-            new Platform (200, 400, 0, 400, testImg),
-            new Platform (100, 480, 0, 400, testImg),
-        ],
-		spikes : [
-            // width, height, x, y, img
-            new Spike (0, 0, 180, 100, testImg)
-		]
     }
 ];
