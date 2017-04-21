@@ -13,6 +13,9 @@ entranceImg.src = "imgs/dooropen2.png";
 var L0Floor = new Image();
 L0Floor.src = "imgs/L0-Floor.png";
 
+var L0BG = new Image();
+L0BG.src = "imgs/L0-BG.png";
+
 var L1Floor = new Image();
 L1Floor.src = "imgs/L1-Floor.png";
 
