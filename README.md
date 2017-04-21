@@ -4,7 +4,7 @@
 <ul>
 <li>Background image (640x230) for Level One</li>
 <li>Various platform imgs for differnet levels</li>
-<li>Start on enemies' design, coding, etc.</li>
+<li>Start on spikes' design, coding, etc.</li>
 <li>Pause button?</li>
 <li>Implement level desins to build</li>
 <li>Brainstorm level ideas</li>
