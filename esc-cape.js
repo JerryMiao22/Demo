@@ -32,7 +32,8 @@ var game = {
     clear : function () {
 		this.context.globalAlpha = 1;
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-		//this.context.drawImage(bgImage, 0, 0, this.canvas.width, this.canvas.height);
+		this.context.drawImage(eval('L' + currentLevel + 'BG'), 0, 0, this.canvas.width, this.canvas.height);
+
     }
 }; // End Game object
 
