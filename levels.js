@@ -17,7 +17,8 @@ const LEVELS = [
         ],
 		spikes : [
 			new Spike (0, 0, 320, 240, testImg)
-		]
+		],
+        BGImage : L0BG
     },
 
     // Level #1
@@ -57,20 +58,29 @@ const LEVELS = [
     // Level #2
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 100, 10),
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 25, 125),
         doors : [
             // width, height, x, y, color
-            new Door (55, 65, 550, 480 - 120 - 65, doorImg)
+            new Door (55, 65, 580, 175, doorImg)
         ],
         platforms : [
             // width, height, x, y, color
-            new Platform (640 / 3, 120, 0, 480 - 120, testImg),
-            new Platform (640 / 6, 200, 640 / 3, 480 - 200, testImg),
-            new Platform (640 / 6, 280, 640 / 3 + 640 / 6, 480 - 280, testImg),
-            new Platform (640 / 3, 120, 640 - 640 / 3, 480 - 120, testImg)
+            
+            // Floor
+            new Platform (100, 240, 0, 240, Transparent),
+            new Platform (100, 240, 100, 240, Transparent),
+            new Platform (50, 240, 200, 240, Transparent),
+            //new Platform (100, 240, 300, 240, Transparent),
+            new Platform (100, 240, 400, 240, Transparent),
+            new Platform (100, 240, 500, 240, Transparent),
+            new Platform (40, 240, 600, 240, Transparent),
+            
+            // Platforms
+            new Platform (80, 80, 175, 160, L2P1),
+            new Platform (130, 150, 390, 95, testImg)
         ],
 		spikes : [
-			new Spike (100, 100, 320, 240, testImg)
+			new Spike (150, 40, 250, 440, L2Spike1)
 		]
     },
     
