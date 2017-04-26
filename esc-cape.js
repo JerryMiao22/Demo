@@ -218,9 +218,9 @@ function Player(width, height, color, x, y) {
             loadLevel(LEVELS[(++currentLevel) % LEVELS.length]);
         }
 	    
-	if (collide(spikes[0], player) !== 'none') {
-		loadLevel(LEVELS[currentLevel]);
-	}
+//        if (collide(spikes[0], player) !== 'none') {
+//            loadLevel(LEVELS[currentLevel]);
+//        }
         
         // Create a variable that allows us to adjust behavior 
         // depending on whether a collision occurs on this frame.
@@ -360,7 +360,7 @@ function update() {
 
 // Starts a new game from scratch
 function init() {
-    currentLevel = 0;
+    currentLevel = 4;
     game.start(); // canvas not created until this function is called
     loadLevel(LEVELS[currentLevel]);
 } // end init
