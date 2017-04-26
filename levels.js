@@ -17,8 +17,7 @@ const LEVELS = [
         ],
 		spikes : [
 			new Spike (0, 0, 320, 240, testImg)
-		],
-        BGImage : L0BG
+		]
     },
 
     // Level #1
@@ -51,7 +50,7 @@ const LEVELS = [
             new Platform (200, 30, 640 - 200, 125, L1P1)
         ],
 		spikes : [
-			new Spike (100, 100, 320, 240, testImg)
+			new Spike (0, 0, 320, 240, testImg)
 		]
     },
     
