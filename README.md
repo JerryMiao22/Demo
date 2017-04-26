@@ -9,11 +9,12 @@
 <li>Separate Background Level Designs</li>
 <li>Platform Designs</li>
 <li>Static Enemy (Spikes, Fire, etc.) designs</li>
-<li>At least 10 levels</li>
 <li>Pause button?</li>
 <li>Change Title of Game?</li>
 <li>Title Screen?</li>
 <li>DEATH screen</li>
+<li>Make player slower?</li>
+<li>Player Sprite + Sprite Animation?</li>
 </ul>
 
 <h2>Extra</h2>
