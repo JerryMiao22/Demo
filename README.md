@@ -1,24 +1,28 @@
 <h1> Esc-cape </h1>
 
-<h2>DEMO DAY MINIMUM</h2>
+<h2>DEMO DAY TO-DO</h2>
 <ul>
-<li>At least 10 levels</li>
-<li>Smooth jumping</li>
-<li>Fix collision detection bugs</li>
-<li>Linear progression game</li>
+<li>Base 10 Levels (Connected, Linear Narrative-ish Game)</li>
+<li>Background designs for 10 Levels</li>
+<li>Player design (Static -> Sprite Animation)</li>
+<li>Static Enemies designs (Spikes, Fire, etc.)</li>
 <li>Separate Background Level Designs</li>
 <li>Platform Designs</li>
-<li>Static Enemy (Spikes, Fire, etc.) designs</li>
-<li>Pause button?</li>
+<li>Player acceleration (Adding realism; *edit levels to accomadate)</li>
 <li>Change Title of Game?</li>
 <li>Title Screen?</li>
-<li>DEATH screen</li>
-<li>Make player slower?</li>
-<li>Player Sprite + Sprite Animation?</li>
+<li>End of Game screen?</li>
+</ul>
+
+<h2>DEMO DAY (OPTIONAL)</h2>
+<ul>
+<li>Pause button</li>
+<li>Fix Collision Detection bugs/problems</li>
+<li>Edit Player jumping (More smooth or other; *edit levels to accomadate)</li>
 </ul>
 
 <h2>Extra</h2>
 <ul>
 <li>Multiple Doors</li>
-<li></li>
+<li>Resize canvas and all assets</li>
 </ul>
