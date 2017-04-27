@@ -95,10 +95,10 @@ const LEVELS = [
             // width, height, x, y, color
             new Platform (640 / 4, 120, 0, 480 - 120, testImg),
             new Platform (640 / 2, 435, 640 / 4, 480 - 435, testImg),
-            new Platform (30, 40, 640 / 4 - 30, 480 - 225, testImg),
-            new Platform (30, 40, 0, 480 - 330, testImg),
-            new Platform (30, 40, 640 / 4 - 30, 480 - 435, testImg),
-            new Platform (640 / 4, 120, 640 - 640 / 4, 480 - 120, testImg)
+            new Platform (30, 40, 130, 255, testImg),
+            new Platform (30, 40, 0, 150, testImg),
+            new Platform (30, 40, 130, 45, testImg),
+            new Platform (160, 120, 480, 360, testImg)
         ],
 		spikes : [
 			new Spike (100, 100, 320, 240, testImg)
@@ -111,20 +111,28 @@ const LEVELS = [
         player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 310),
         doors : [
             // width, height, x, y, color
-            new Door (55, 65, 585, 480 - 175 - 65, doorImg)
+            new Door (55, 65, 585, 240, doorImg)
         ],
         platforms : [
             // width, height, x, y, color
-            new Platform (640 / 4, 240, 0, 480 - 240, testImg),
-            new Platform (640 / 4 - 25, 200, 0, 0, testImg),
+            
+            // Bottom Left
+            new Platform (160, 240, 0, 240, testImg),
+            // Top Left
+            new Platform (130, 200, 0, 0, testImg),
+            // Bottom Right
+            new Platform (130, 175, 540, 305, testImg),
+            // Top Right
+            new Platform (160, 240, 540, 0, testImg),
+            // Platform 1
             new Platform (80, 20, 230, 135, testImg),
-            new Platform (80, 20, 380, 340, testImg),
-            new Platform (640 / 4 - 25, 175, 640 - 100, 480 - 175, testImg),
-            new Platform (640 / 4, 240, 640 - 100, 0, testImg)
+            // Platform 2
+            new Platform (80, 20, 380, 340, testImg)
         ],
 		spikes : [
             // width, height, x, y, color
-			new Spike (380, 100, 160, 480 - 100, testImg)
+            //(380, 100, 160, 480 - 100, testImg)
+			new Spike (0, 0, 160, 480 - 100, testImg)
 		]
     },
     
@@ -134,18 +142,18 @@ const LEVELS = [
         player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 75, 390),
         doors : [
             // width, height, x, y, color
-            new Door (55, 65, 585, 0, doorImg)
+            new Door (55, 65, 585, 5, doorImg)
         ],
         platforms : [
             // width, height, x, y, color
             // Bottom Floor
-            new Platform (100, 30, 0, 480 - 30, testImg),
-            new Platform (100, 30, 100, 480 - 30, testImg),
-            new Platform (100, 30, 200, 480 - 30, testImg),
-            new Platform (100, 30, 300, 480 - 30, testImg),
-            new Platform (100, 30, 400, 480 - 30, testImg),
-            new Platform (100, 30, 500, 480 - 30, testImg),
-            new Platform (40, 30, 600, 480 - 30, testImg),
+            new Platform (100, 30, 0, 450, testImg),
+            new Platform (100, 30, 100, 450, testImg),
+            new Platform (100, 30, 200, 450, testImg),
+            new Platform (100, 30, 300, 450, testImg),
+            new Platform (100, 30, 400, 450, testImg),
+            new Platform (100, 30, 500, 450, testImg),
+            new Platform (40, 30, 600, 450, testImg),
             
             // Entrance Door
             new Platform (55, 65, 0, 480 - 95, entranceImg),
@@ -172,11 +180,11 @@ const LEVELS = [
             new Platform (100, 30, 400, 150, testImg),
             
             // Fourth floor
-            new Platform (100, 30, 140, 65, testImg),
-            new Platform (100, 30, 240, 65, testImg),
-            new Platform (100, 30, 340, 65, testImg),
-            new Platform (100, 30, 440, 65, testImg),
-            new Platform (100, 30, 540, 65, testImg)
+            new Platform (100, 30, 140, 70, testImg),
+            new Platform (100, 30, 240, 70, testImg),
+            new Platform (100, 30, 340, 70, testImg),
+            new Platform (100, 30, 440, 70, testImg),
+            new Platform (100, 30, 540, 70, testImg)
         ],
 		spikes : [
             // width, height, x, y, color
@@ -199,20 +207,49 @@ const LEVELS = [
             // width, height, x, y, color
             // Bottom Floor
             new Platform (100, 400, 0, 80, testImg),
-            new Platform (100, 30, 100, 480 - 30, testImg),
-            new Platform (100, 30, 200, 480 - 30, testImg),
+            new Platform (100, 30, 100, 450, testImg),
+            new Platform (100, 30, 200, 450, testImg),
             
             new Platform (100, 400, 200, 0, testImg),
             
-            new Platform (100, 30, 300, 480 - 30, testImg),
+            new Platform (100, 30, 300, 450, testImg),
             new Platform (100, 400, 400, 80, testImg),
             
-            new Platform (100, 30, 500, 480 - 30, testImg),
-            new Platform (40, 30, 600, 480 - 30, testImg)
+            new Platform (100, 30, 500, 450, testImg),
+            new Platform (40, 30, 600, 450, testImg)
         ],
 		spikes : [
             // width, height, x, y, img
             new Spike (20, 290, 180, 100, L6SpikeLeft)
 		]
+        
+        
+    },
+    
+    // Level #7
+    {
+        // width, height, color, x, y
+        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 30),
+        doors : [
+            // width, height, x, y, color
+            //new Door (55, 65, 575, 385, doorImg)
+            new Door (0, 0, 575, 385, doorImg)
+        ],
+        platforms : [
+            // width, height, x, y, color
+            
+            // Bottom Left
+            new Platform (250, 370, 0, 110, Transparent),
+            new Platform (250, 30, 0, 0, Transparent),
+            // Top Right
+            new Platform (250, 90, 390, 390, Transparent),
+            // Bottom Left 
+            new Platform (250, 310, 390, 0, Transparent)
+        ],
+		spikes : [
+            // width, height, x, y, img
+            new Spike (0, 0, 180, 100, L6SpikeLeft)
+		]
+        
     }
 ];
