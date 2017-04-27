@@ -1,7 +1,7 @@
 /**
  * Esc-cape
  *
- * A platformer game by Faisal with Aaron, Vlad and Eric
+ * A platformer game by Faisal with Aaron and Eric
  *
  */
 
@@ -360,7 +360,7 @@ function update() {
 
 // Starts a new game from scratch
 function init() {
-    currentLevel = 4;
+    currentLevel = 7;
     game.start(); // canvas not created until this function is called
     loadLevel(LEVELS[currentLevel]);
 } // end init
