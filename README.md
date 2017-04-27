@@ -1,4 +1,7 @@
 <h1> Esc-cape </h1>
+<p> why do i even make this </p>
+<p> probably just to remind myself of what i need to do </p>
+<p> so sahd lyfe </p>
 
 <h2>DEMO DAY TO-DO</h2>
 <ul>
