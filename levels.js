@@ -6,7 +6,8 @@ const LEVELS = [
     // Level #0
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 10, 100), 
+        playerX : 10,
+        playerY : 100,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 525, 480 - 250 - 65, doorImg)
@@ -23,7 +24,8 @@ const LEVELS = [
     // Level #1
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 80, 350), 
+        playerX : 80,
+        playerY : 350,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 525, 60, doorImg),
@@ -57,7 +59,8 @@ const LEVELS = [
     // Level #2
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 25, 125),
+        playerX : 25,
+        playerY : 125,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 580, 175, doorImg)
@@ -86,7 +89,8 @@ const LEVELS = [
     // Level #3
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 310),
+        playerX : 50,
+        playerY : 310,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 550, 480 - 120 - 65, doorImg)
@@ -108,7 +112,8 @@ const LEVELS = [
     // Level #4
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 310),
+        playerX : 50,
+        playerY : 310,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 585, 240, doorImg)
@@ -139,7 +144,8 @@ const LEVELS = [
     // Level #5
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 75, 390),
+        playerX : 75,
+        playerY : 90,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 585, 5, doorImg)
@@ -198,29 +204,48 @@ const LEVELS = [
     // Level #6
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 30),
+        playerX : 50,
+        playerY : 30,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 575, 385, doorImg)
         ],
         platforms : [
             // width, height, x, y, color
+            
+            // Starting Block
+            new Platform (100, 100, 0, 80, testImg),
+            new Platform (100, 100, 0, 180, testImg),
+            new Platform (100, 100, 0, 280, testImg),
+            new Platform (100, 100, 0, 380, testImg),
+            
             // Bottom Floor
-            new Platform (100, 400, 0, 80, testImg),
             new Platform (100, 30, 100, 450, testImg),
             new Platform (100, 30, 200, 450, testImg),
-            
-            new Platform (100, 400, 200, 0, testImg),
-            
             new Platform (100, 30, 300, 450, testImg),
-            new Platform (100, 400, 400, 80, testImg),
+            new Platform (100, 30, 400, 450, testImg),
             
             new Platform (100, 30, 500, 450, testImg),
-            new Platform (40, 30, 600, 450, testImg)
+            new Platform (40, 30, 600, 450, testImg),
+            
+            // Block with Spikes
+            new Platform (100, 400, 200, 0, testImg),
+            
+            // 
+            new Platform (25, 50, 400, 350, testImg),
+            new Platform (25, 50, 300, 250, testImg),
+            new Platform (25, 50, 400, 150, testImg),
+            
+            // Going up block
+            new Platform (100, 100, 425, 80, testImg),
+            new Platform (100, 100, 425, 180, testImg),
+            new Platform (100, 100, 425, 280, testImg),
+            new Platform (100, 70, 425, 380, testImg)
         ],
 		spikes : [
             // width, height, x, y, img
             new Spike (20, 290, 180, 100, L6SpikeLeft)
+            //new Spike (20, 20, 180, 420, testImg)
 		]
         
         
@@ -229,7 +254,8 @@ const LEVELS = [
     // Level #7
     {
         // width, height, color, x, y
-        player : new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", 50, 30),
+        playerX : 50,
+        playerY : 30,
         doors : [
             // width, height, x, y, color
             //new Door (55, 65, 575, 385, doorImg)
@@ -248,7 +274,7 @@ const LEVELS = [
         ],
 		spikes : [
             // width, height, x, y, img
-            new Spike (0, 0, 180, 100, L6SpikeLeft)
+            //new Spike (0, 480, 180, 100, L6SpikeLeft)
 		]
         
     }
