@@ -91,9 +91,13 @@ document.addEventListener("keyup", function (e) {
 // Loads a new level
 function loadLevel(level) {
 
+//    level = JSON.parse(JSON.stringify(level));
+    
     // Set the game's player, platforms and doors to the
-    // level's stored values for these pieces of data.
-    player = level.player;
+    // level's stored values for these pieces of data. 
+    playerX = level.playerX;
+    playerY = level.playerY;
+    player = new Player(PLAYER_SIZE, PLAYER_SIZE, "gray", playerX, playerY);
     platforms = level.platforms;
     doors = level.doors;
 	spikes = level.spikes;
@@ -214,13 +218,11 @@ function Player(width, height, color, x, y) {
     this.collisionDetect = function() {
 	    
 	//door === player
+        
+        // Rewrite similar to Spikes to have multiple functional doors
         if (collide(doors[0], player) !== 'none') {
             loadLevel(LEVELS[(++currentLevel) % LEVELS.length]);
         }
-	    
-//        if (collide(spikes[0], player) !== 'none') {
-//            loadLevel(LEVELS[currentLevel]);
-//        }
         
         // Create a variable that allows us to adjust behavior 
         // depending on whether a collision occurs on this frame.
@@ -253,6 +255,13 @@ function Player(width, height, color, x, y) {
             // Set player's y location to the bottom of the screen
             this.y = game.canvas.height - this.height;
         }
+        
+        spikes.forEach (function (spike) {
+            if (collide(spike, player) !== 'none') {
+                loadLevel(LEVELS[currentLevel]);
+                console.log("Collided!")
+            }
+        });
         
         // Check for collision with platforms
         for (var i = 0; i < platforms.length; i++) {
@@ -348,13 +357,19 @@ function update() {
     player.draw();
     
     // Draw doors--forEach calls the draw() method of each door in the array
-    doors.forEach((d) => d.draw());
+    doors.forEach(function(door) { 
+        door.draw(); 
+    });
     
     // Draw platforms
-    platforms.forEach((p) => p.draw());
-	
+    platforms.forEach(function(p) { 
+        p.draw(); 
+    });
+    
 	// Draw spikes
-    spikes.forEach((s) => s.draw());
+    spikes.forEach(function(s) { 
+        s.draw(); 
+    });
 } // end update
 
 
