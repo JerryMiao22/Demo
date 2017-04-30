@@ -277,5 +277,43 @@ const LEVELS = [
             //new Spike (0, 480, 180, 100, L6SpikeLeft)
 		]
         
+    },
+    
+    // Level #8
+    {
+        // width, height, color, x, y
+        playerX : 70,
+        playerY : 260,
+        doors : [
+            // width, height, x, y, color
+            //new Door (55, 65, 575, 385, doorImg)
+            new Door (55, 65, 585, 45, doorImg)
+        ],
+        platforms : [
+            // width, height, x, y, color
+            
+            // Starting platform
+            new Platform (100, 180, 0, 300, testImg),
+            //new Platform (55, 65, 0, 215, entranceImg),
+            
+            // First Series platforms
+            new Platform (50, 20, 140, 300, testImg),
+            new Platform (50, 20, 270, 300, testImg),
+            new Platform (50, 20, 400, 300, testImg),
+            
+            // Second series platforms
+            new Platform (50, 20, 490, 250, testImg),
+            new Platform (50, 20, 335, 170, testImg),
+            new Platform (50, 20, 200, 120, testImg),
+            new Platform (50, 20, 370, 60, testImg),
+            
+            // Exit Platform
+            new Platform (100, 370, 540, 110, testImg),
+        ],
+		spikes : [
+            // width, height, x, y, img
+            new Spike (440, 150, 100, 330, lava)
+		]
+        
     }
 ];
