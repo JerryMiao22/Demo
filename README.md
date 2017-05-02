@@ -1,4 +1,4 @@
-<b> FIRST CONTACT </b>
+<b><h1> FIRST CONTACT </h1></b>
 
 <h2>DEMO DAY TO-DO</h2>
 <ul>
