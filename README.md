@@ -1,13 +1,9 @@
-<h1> Esc-cape </h1>
-<p> why do i even make this </p>
-<p> probably just to remind myself of what i need to do </p>
-<p> so sahd lyfe </p>
+<h1> First Contact </h1>
 
 <h2>DEMO DAY TO-DO</h2>
 <ul>
-<li>Base 10 Levels (Connected, Linear Narrative-ish Game)</li>
 <li>Background designs for 10 Levels</li>
-<li>Player design (Static -> Sprite Animation)</li>
+<li>Player Sprite Animation?</li>
 <li>Static Enemies designs (Spikes, Fire, etc.)</li>
 <li>Separate Background Level Designs</li>
 <li>Platform Designs</li>
@@ -15,6 +11,7 @@
 <li>Change Title of Game?</li>
 <li>Title Screen?</li>
 <li>End of Game screen?</li>
+<li>End Narrative Level?</li>
 </ul>
 
 <h2>DEMO DAY (OPTIONAL)</h2>
