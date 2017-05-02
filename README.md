@@ -2,6 +2,7 @@
 <br>
 <h2>DEMO DAY TO-DO</h2>
 <ul>
+<li>Presentation Slides and rehearsal practice</li>
 <li>Level Designs (Platforms, BG, spikes, etc.)</li>
 <li>Player Sprite Animation?</li>
 <li>Player acceleration (Adding realism; *edit levels to accomadate)</li>
