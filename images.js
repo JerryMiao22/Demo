@@ -50,7 +50,7 @@ var L3BG = new Image();
 L3BG.src = "";
 
 var L4BG = new Image();
-L4BG.src = "";
+L4BG.src = "imgs/L4-BG.png";
 
 var L5BG = new Image();
 L5BG.src = "";
@@ -78,7 +78,7 @@ var L6SpikeLeft = new Image();
 L6SpikeLeft.src = "imgs/L6SpikeLeft.png";
 
 var L7BG = new Image();
-L7BG.src = "imgs/NewLevelBG.png";
+L7BG.src = "imgs/L7-BG.png";
 
 var L8BG = new Image();
 L8BG.src = "imgs/testBG.png";
