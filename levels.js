@@ -112,7 +112,7 @@ const LEVELS = [
     {
         // width, height, color, x, y
         playerX : 50,
-        playerY : 310,
+        playerY : 205,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 585, 240, doorImg)
@@ -121,30 +121,30 @@ const LEVELS = [
             // width, height, x, y, color
             
             // Bottom Left
-            new Platform (160, 240, 0, 240, testImg),
+            new Platform (160, 35, 0, 240, Transparent),
             // Top Left
-            new Platform (130, 200, 0, 0, testImg),
+            new Platform (130, 50, 0, 150, Transparent),
             // Bottom Right
-            new Platform (130, 175, 540, 305, testImg),
+            new Platform (130, 35, 540, 305, Transparent),
             // Top Right
-            new Platform (160, 240, 540, 0, testImg),
+            new Platform (160, 50, 540, 190, Transparent),
             // Platform 1
-            new Platform (80, 20, 230, 135, testImg),
+            new Platform (80, 20, 230, 135, Transparent),
             // Platform 2
-            new Platform (80, 20, 380, 340, testImg)
+            new Platform (80, 20, 380, 340, Transparent)
         ],
 		spikes : [
             // width, height, x, y, color
             //(380, 100, 160, 480 - 100, testImg)
-			new Spike (0, 0, 160, 480 - 100, testImg)
+			new Spike (640, 110, 0, 370, Transparent)
 		]
     },
     
     // Level #5
     {
         // width, height, color, x, y
-        playerX : 75,
-        playerY : 90,
+        playerX : 70,
+        playerY : 415,
         doors : [
             // width, height, x, y, color
             new Door (55, 65, 585, 5, doorImg)
@@ -196,7 +196,7 @@ const LEVELS = [
             new Spike (20, 20, 500, 355, L5Spike4),
 			new Spike (20, 20, 120, 255, L5Spike2),
             new Spike (20, 20, 500, 155, L5Spike4),
-            new Spike (20, 20, 120, 70, L5Spike2)
+            new Spike (20, 20, 120, 75, L5Spike2)
 		]
     },
     
