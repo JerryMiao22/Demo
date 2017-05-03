@@ -36,7 +36,7 @@ const LEVELS = [
             new Platform (640, 250, 0, 480 - 250, Transparent)
         ],
 		spikes : [
-			new Spike (95, 15, 250, 215, Transparent)
+			new Spike (85, 15, 255, 215, Transparent)
 		]
     },
 
@@ -97,7 +97,7 @@ const LEVELS = [
             
             // Platforms
             new Platform (80, 80, 175, 160, L3P1),
-            new Platform (130, 150, 390, 95, testImg)
+            new Platform (130, 150, 390, 95, L3P2)
         ],
 		spikes : [
 			new Spike (150, 40, 250, 440, L3Spike1)
@@ -249,7 +249,7 @@ const LEVELS = [
             // Block with Spikes
             new Platform (100, 400, 200, 0, testImg),
             
-            // 
+            // Jumping platforms
             new Platform (25, 50, 400, 350, testImg),
             new Platform (25, 50, 300, 250, testImg),
             new Platform (25, 50, 400, 150, testImg),
@@ -262,8 +262,10 @@ const LEVELS = [
         ],
 		spikes : [
             // width, height, x, y, img
-            new Spike (20, 290, 180, 100, L7SpikeLeft)
-            //new Spike (20, 20, 180, 420, testImg)
+            new Spike (20, 290, 180, 100, testSpike),
+            new Spike (25, 50, 300, 300, testSpike),
+            new Spike (25, 50, 400, 200, testSpike),
+            new Spike (25, 365, 615, 0, testSpike)
 		]
         
         
@@ -292,7 +294,7 @@ const LEVELS = [
         ],
 		spikes : [
             // width, height, x, y, img
-            //new Spike (0, 480, 180, 100, L6SpikeLeft)
+            new Spike (140, 30, 250, 460, Transparent)
 		]
         
     },
