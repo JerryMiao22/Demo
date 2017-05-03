@@ -24,7 +24,7 @@ var game = {
         this.canvas.width = 640;
         this.canvas.height = 480;
         this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        document.body.insertBefore(this.canvas, document.body.childNodes[0].childNodes[0]);
         this.interval = setInterval(update, 1000 / 60);
     },
     
@@ -37,6 +37,7 @@ var game = {
     }
 }; // End Game object
 
+var ctx = game.context;
 
 // Keyboard handler
 var kbd = {
@@ -86,6 +87,13 @@ document.addEventListener("keyup", function (e) {
         kbd.p = false;
     }
 }, false);
+
+//clearInterval(game.interval);
+//ctx.drawImage(titleBG, 0, 0);
+//setTimeout(function() {
+//  game.interval = setInterval(update, 1000 / 60);
+//  loadLevel(LEVELS[currentLevel]);
+//}), 5000);
 
 
 // Loads a new level
@@ -173,6 +181,8 @@ function Player(width, height, color, x, y) {
     this.speedX = 0;
     this.speedY = 0;
     this.landed = false;
+    //this.frame = frame;
+    //this.imgs = imgs;
     
     // Handles keyboard input and collisions on the player 
     // and updates its position accordingly
@@ -196,6 +206,7 @@ function Player(width, height, color, x, y) {
         // If the keyboard is pressed left or right, move the player in that direction
         if (kbd.left) {
             this.speedX = -5;
+            
         }
         else if (kbd.right) {
             this.speedX = 5;
@@ -258,8 +269,16 @@ function Player(width, height, color, x, y) {
         
         spikes.forEach (function (spike) {
             if (collide(spike, player) !== 'none') {
-                loadLevel(LEVELS[currentLevel]);
-                console.log("Collided!")
+                clearInterval(game.interval);
+                ctx.clearRect(0, 0, game.canvas.width, game.canvas.height);
+                // Replace with Game Over image instead of testBG
+                ctx.drawImage(testBG, 0, 0);
+
+                ctx.clearRect(0, 0, game.canvas.width, game.canvas.height);
+                setTimeout(function() {
+                    game.interval = setInterval(update, 1000 / 60);
+                    loadLevel(LEVELS[currentLevel]);
+                }, 1000);
             }
         });
         
@@ -303,9 +322,33 @@ function Player(width, height, color, x, y) {
     // Draw the player to screen
     this.draw = function() {
         ctx = game.context;
-		ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-		//ctx.drawImage(this.color, this.x, this.y, this.width, this.height);
+        
+        if (!this.landed) {
+            
+            if (this.frameNum++ % 2 === 0) {
+                ctx.drawImage(playerJump1, this.x, this.y);
+            }
+            else {
+                ctx.drawImage(playerJump2, this.x, this.y);
+            }
+        }
+        
+        else if (kbd.left) {
+            if (this.frameNum++ % 2 === 0) {
+                ctx.drawImage(playerLeft1, this.x, this.y);
+            }
+            else {
+                ctx.drawImage(playerLeft2, this.x, this.y);
+            }
+        }
+        
+        else if (kbd.right) {
+            ctx.drawImage(playerRight1, this.x, this.y);   
+        }
+        
+        else {
+            ctx.drawImage(playerStanding, this.x, this.y);
+        }
     }
 } // end Player
 
@@ -350,6 +393,37 @@ function update() {
     // Clears screen of previous frames
     game.clear();
     
+    // Pausing the Game - Refactor using functions
+	if (kbd.p) {
+		console.log("Paused");
+		kbd.p = false;
+		
+		clearInterval(game.interval);
+		
+		// Creates Visible Pause Screen
+		game.context.font = "50px Arial";
+		game.context.fillStyle = "orange";
+		game.context.textAlign = "center";
+		game.context.fillText("Game Paused", game.canvas.width / 2, game.canvas.height / 2);
+		game.context.font = "20px Comic Sans MS";
+		game.context.fillText("Press P to continue", game.canvas.width / 2, game.canvas.height / 2 + 30);
+		game.context.font = "15px Comic Sans MS";
+		game.context.fillText("(In development)", game.canvas.width / 2, game.canvas.height / 2 + 60);
+		game.context.globalAlpha = 0.5;
+		game.context.fillStyle = "#004487";
+		//game.context.fillRect(0,0,480,270);
+		
+		// wait for pause button to be pressed again
+		var w = setInterval (function() {
+			if (kbd.p) {
+				kbd.p = false;
+				clearInterval(w);
+				game.interval = setInterval (update, 20);
+				console.log("Unpaused");
+			}
+		}, 20);
+	}
+    
     // Move stuff
 	player.move();
     
@@ -375,7 +449,16 @@ function update() {
 
 // Starts a new game from scratch
 function init() {
-    currentLevel = 1;
+    currentLevel = 9;
     game.start(); // canvas not created until this function is called
-    loadLevel(LEVELS[currentLevel]);
+    
+    let ctx = game.canvas.getContext("2d");
+    
+    clearInterval(game.interval);
+    ctx.drawImage(testBG, 0, 0);
+    
+    setTimeout(function() {
+        game.interval = setInterval(update, 1000 / 60);
+        loadLevel(LEVELS[currentLevel]);
+    }, 1000);
 } // end init
