@@ -116,7 +116,10 @@ var L9BG = new Image();
 L9BG.src = "imgs/L9-BG.png";
 
 var L10BG = new Image();
-L10BG.src = "";
+L10BG.src = "imgs/L10-BG.png";
 
 var lava = new Image();
 lava.src = "imgs/lava.gif";
+
+var L11BG = new Image();
+L11BG.src = "imgs/testEnd.png";
