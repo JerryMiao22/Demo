@@ -33,6 +33,9 @@ testBG.src = "imgs/testBG.png";
 var testSpike = new Image();
 testSpike.src = "imgs/red.png";
 
+var testTitle = new Image();
+testTitle.src = "imgs/testTitle.png";
+
 var doorImg = new Image();
 doorImg.src = "imgs/doorclosed2.png";
 
@@ -101,7 +104,7 @@ var L6Spike4 = new Image();
 L6Spike4.src = "imgs/L6Spike4.png";
 
 var L7BG = new Image();
-L7BG.src = "";
+L7BG.src = "imgs/L7-BG.png";
 
 var L7SpikeLeft = new Image();
 L7SpikeLeft.src = "imgs/L7SpikeLeft.png";
