@@ -1,5 +1,28 @@
-var playerImg = new Image();
-playerImg.src = "";
+var PLAYER_IMAGE_FILES = [ "imgs/standing.png", "imgs/left1.png", 
+                           "imgs/left2.png", "imgs/right1.png", 
+                           "imgs/right2.png", "imgs/jump1.png", 
+                           "imgs/jump2.png" ];
+
+var playerStanding = new Image();
+playerStanding.src = "imgs/standing.png";
+
+var playerLeft1 = new Image();
+playerLeft1.src = "imgs/left1.png";
+
+var playerLeft2 = new Image();
+playerLeft2.src = "imgs/left2.png";
+
+var playerRight1 = new Image();
+playerRight1.src = "imgs/right1.png";
+
+var playerRight2 = new Image();
+playerRight2.src = "imgs/right2.png";
+
+var playerJump1 = new Image();
+playerJump1.src = "imgs/jump1.png";
+
+var playerJump2 = new Image();
+playerJump2.src = "imgs/jump2.png";
 
 var testImg = new Image();
 testImg.src = "imgs/black.png";
@@ -53,13 +76,13 @@ var L3Spike1 = new Image();
 L3Spike1.src = "imgs/L3Spike1.png";
 
 var L4BG = new Image();
-L4BG.src = "";
+L4BG.src = "imgs/L4-BG.png";
 
 var L5BG = new Image();
 L5BG.src = "imgs/L5-BG.png";
 
 var L6BG = new Image();
-L6BG.src = "";
+L6BG.src = "imgs/L6-BG.png";
 
 // Spike pointing Up
 var L6Spike1 = new Image();
@@ -87,10 +110,10 @@ var L8BG = new Image();
 L8BG.src = "imgs/L8-BG.png";
 
 var L9BG = new Image();
-L9BG.src = "imgs/testBG.png";
+L9BG.src = "imgs/L9-BG.png";
 
-//var L10BG = new Image();
-//L10BG.src = "";
+var L10BG = new Image();
+L10BG.src = "";
 
 var lava = new Image();
 lava.src = "imgs/lava.gif";
