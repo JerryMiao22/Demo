@@ -345,51 +345,69 @@ const LEVELS = [
         doors : [
             // width, height, x, y, color
             //new Door (55, 65, 575, 385, doorImg)
-            new Door (55, 65, 470, 100, doorImg)
+            new Door (55, 65, 470, 100, Transparent)
         ],
         platforms : [
             // width, height, x, y, color
             
             // Starting platform
-            new Platform (100, 25, 0, 50, testImg),
-            new Platform (100, 25, 100, 50, testImg),
-            new Platform (100, 25, 200, 50, testImg),
-            new Platform (100, 25, 300, 50, testImg),
-            new Platform (100, 25, 400, 50, testImg),
-            new Platform (50, 25, 500, 50, testImg),
+            new Platform (100, 25, 0, 50, Transparent),
+            new Platform (100, 25, 100, 50, Transparent),
+            new Platform (100, 25, 200, 50, Transparent),
+            new Platform (100, 25, 300, 50, Transparent),
+            new Platform (100, 25, 400, 50, Transparent),
+            new Platform (50, 25, 500, 50, Transparent),
             
-            new Platform (25, 100, 525, 75, testImg),
-            new Platform (25, 100, 525, 175, testImg),
-            new Platform (25, 100, 525, 275, testImg),
-            new Platform (25, 25, 525, 375, testImg),
+            new Platform (25, 100, 525, 75, Transparent),
+            new Platform (25, 100, 525, 175, Transparent),
+            new Platform (25, 100, 525, 275, Transparent),
+            new Platform (25, 25, 525, 375, Transparent),
             
-            new Platform (100, 25, 425, 375, testImg),
-            new Platform (100, 25, 325, 375, testImg),
-            new Platform (100, 25, 225, 375, testImg),
-            new Platform (100, 25, 125, 375, testImg),
+            new Platform (100, 25, 425, 375, Transparent),
+            new Platform (100, 25, 325, 375, Transparent),
+            new Platform (100, 25, 225, 375, Transparent),
+            new Platform (100, 25, 125, 375, Transparent),
             
-            new Platform (100, 25, 325, 270, testImg),
-            new Platform (100, 25, 225, 270, testImg),
-            new Platform (100, 25, 125, 270, testImg),
-            new Platform (100, 25, 25, 270, testImg),
-            new Platform (25, 25, 0, 270, testImg),
+            new Platform (100, 25, 325, 270, Transparent),
+            new Platform (100, 25, 225, 270, Transparent),
+            new Platform (100, 25, 125, 270, Transparent),
+            new Platform (100, 25, 25, 270, Transparent),
+            new Platform (25, 25, 0, 270, Transparent),
             
-            new Platform (100, 25, 325, 165, testImg),
-            new Platform (100, 25, 225, 165, testImg),
-            new Platform (100, 25, 125, 165, testImg),
-            new Platform (100, 25, 425, 165, testImg),
+            new Platform (100, 25, 325, 165, Transparent),
+            new Platform (100, 25, 225, 165, Transparent),
+            new Platform (100, 25, 125, 165, Transparent),
+            new Platform (100, 25, 425, 165, Transparent),
         ],
 		spikes : [
             // width, height, x, y, img
-            new Spike (30, 480, 610, 0, testSpike),
-            new Spike (350, 25, 125, 400, testSpike),
-            new Spike (30, 185, 0, 295, testSpike),
-            new Spike (375, 25, 30, 295, testSpike),
-            new Spike (30, 185, 495, 190, testSpike),
-            new Spike (345, 25, 150, 190, testSpike),
-            new Spike (30, 195, 0, 75, testSpike),
-            new Spike (395, 25, 30, 75, testSpike),
+            new Spike (30, 480, 610, 0, Transparent),
+            new Spike (350, 25, 125, 400, Transparent),
+            new Spike (30, 185, 0, 295, Transparent),
+            new Spike (375, 25, 30, 295, Transparent),
+            new Spike (30, 185, 495, 190, Transparent),
+            new Spike (345, 25, 150, 190, Transparent),
+            new Spike (30, 195, 0, 75, Transparent),
+            new Spike (395, 25, 30, 75, Transparent),
 		]
         
-    }
+    },
+    
+    // Level #11 - THE END (so far)
+    {
+        // width, height, color, x, y
+        playerX : 710,
+        playerY : 700,
+        doors : [
+            // width, height, x, y, color
+            new Door (0, 0, 700, 700, doorImg)
+        ],
+        platforms : [
+            // width, height, x, y, img
+            new Platform (0, 0, 700, 700, L0Floor)
+        ],
+		spikes : [
+			new Spike (0, 0, 320, 240, testImg)
+		]
+    },
 ];
