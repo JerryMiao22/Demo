@@ -232,40 +232,40 @@ const LEVELS = [
             // width, height, x, y, color
             
             // Starting Block
-            new Platform (100, 100, 0, 80, testImg),
-            new Platform (100, 100, 0, 180, testImg),
-            new Platform (100, 100, 0, 280, testImg),
+            new Platform (100, 100, 0, 80, Transparent),
+            new Platform (100, 100, 0, 180, Transparent),
+            new Platform (100, 100, 0, 280, Transparent),
             new Platform (100, 100, 0, 380, testImg),
             
             // Bottom Floor
-            new Platform (100, 30, 100, 450, testImg),
-            new Platform (100, 30, 200, 450, testImg),
-            new Platform (100, 30, 300, 450, testImg),
-            new Platform (100, 30, 400, 450, testImg),
+            new Platform (100, 30, 100, 450, Transparent),
+            new Platform (100, 30, 200, 450, Transparent),
+            new Platform (100, 30, 300, 450, Transparent),
+            new Platform (100, 30, 400, 450, Transparent),
             
-            new Platform (100, 30, 500, 450, testImg),
-            new Platform (40, 30, 600, 450, testImg),
+            new Platform (100, 30, 500, 450, Transparent),
+            new Platform (40, 30, 600, 450, Transparent),
             
             // Block with Spikes
-            new Platform (100, 400, 200, 0, testImg),
+            new Platform (100, 400, 200, 0, Transparent),
             
             // Jumping platforms
-            new Platform (25, 50, 400, 350, testImg),
-            new Platform (25, 50, 300, 250, testImg),
-            new Platform (25, 50, 400, 150, testImg),
+            new Platform (25, 50, 400, 350, Transparent),
+            new Platform (25, 50, 300, 250, Transparent),
+            new Platform (25, 50, 400, 150, Transparent),
             
             // Going up block
-            new Platform (100, 100, 425, 80, testImg),
-            new Platform (100, 100, 425, 180, testImg),
-            new Platform (100, 100, 425, 280, testImg),
-            new Platform (100, 70, 425, 380, testImg)
+            new Platform (100, 100, 425, 80, Transparent),
+            new Platform (100, 100, 425, 180, Transparent),
+            new Platform (100, 100, 425, 280, Transparent),
+            new Platform (100, 70, 425, 380, Transparent)
         ],
 		spikes : [
             // width, height, x, y, img
-            new Spike (20, 290, 180, 100, testSpike),
-            new Spike (25, 50, 300, 300, testSpike),
-            new Spike (25, 50, 400, 200, testSpike),
-            new Spike (25, 365, 615, 0, testSpike)
+            new Spike (20, 290, 180, 100, Transparent),
+            new Spike (25, 50, 300, 300, Transparent),
+            new Spike (25, 50, 400, 200, Transparent),
+            new Spike (25, 365, 615, 0, Transparent)
 		]
         
         
